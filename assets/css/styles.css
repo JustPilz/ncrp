@@ -1,0 +1,161 @@
+p > code, td > code {
+    color: #c7254e !important;
+    background-color: #f9f2f4 !important;
+    border-radius: 4px !important;
+}
+
+.color-theme-2 p > code, .color-theme-2 td > code {
+    color: #9dbed8 !important;
+    background: #2d3143 !important;
+    border-color: #2d3143 !important;
+    border-radius: 4px !important;
+}
+
+
+.markdown-section h1 {
+    margin-bottom: 0.6em;
+}
+
+.page-inner {
+    padding-top: 0;
+}
+
+kbd, key {
+    display: inline-block;
+    margin: 0 .1em;
+    padding: .1em .6em;
+    font-family: Arial, "Helvetica Neue", Helvetica,sans-serif;
+    font-size: 12px !important;
+    line-height: 1.4;
+    color: #242729;
+    text-shadow: 0 1px 0 #FFF;
+    background-color: #e1e3e5;
+    border: 1px solid #adb3b9;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(12,13,14,0.2),0 0 0 2px #FFF inset;
+    white-space: nowrap;
+}
+
+
+.form-style-8{
+    font-family: 'Open Sans Condensed', arial, sans;
+    width: 500px;
+    padding: 30px;
+    background: #FFFFFF;
+    margin: 50px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+.form-style-8 h2{
+    background: #4D4D4D;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #A9A9A9 !important;
+    font-size: 18px;
+    font-weight: 100;
+    padding: 20px;
+    margin: -30px -30px 30px -30px;
+}
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="number"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 textarea,
+.form-style-8 select
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 25px;
+    font: 16px Arial, Helvetica, sans-serif;
+    height: 25px;
+    padding-left: 4px;
+}
+.form-style-8 textarea{
+    resize:none;
+    overflow: hidden;
+}
+.form-style-8 input[type="button"],
+.form-style-8 input[type="submit"]{
+    -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    box-shadow: inset 0px 1px 0px 0px #45D6D6;
+    background-color: #2CBBBB;
+    border: 1px solid #27A0A0;
+    display: inline-block;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 14px;
+    padding: 8px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.form-style-8 input[type="button"]:hover,
+.form-style-8 input[type="submit"]:hover {
+    background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+    background-color:#34CACA;
+}
+
+.form-style-8 input[type="button"]:disabled,
+.form-style-8 input[type="submit"]:disabled {
+    border: 1px solid #787878;
+    background: linear-gradient(to bottom, #888888 5%, #999999 100%);
+    background-color: #888888;
+    box-shadow: inset 0px 1px 0px 0px #888888;
+    color: #555555;
+     -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    cursor: not-allowed;
+}
+
+.form-style-8 input.error {
+    position: relative;
+    -webkit-box-shadow: 0px 0px 2px 2px rgba(255,33,33,1);
+    -moz-box-shadow: 0px 0px 2px 2px rgba(255,33,33,1);
+    box-shadow: 0px 0px 2px 2px rgba(255,33,33,1);
+}
+.form-style-8 input.error:after {
+    content: "Необходимо заполнить!";
+    color: rgba(255,33,33,1);
+    position: absolute;
+    top: -31px;
+    font-size: 12px;
+    width: 150px;
+}
+
+.form-style-8 .errorpass {
+    position: relative;
+}
+.form-style-8 .errorpass:after {
+    content: "Пароли не совпадают!";
+    color: rgba(255,33,33,1);
+    position: absolute;
+    top: -31px;
+    font-size: 13px;
+    width: 150px;
+}
+
+.iframe-parent {
+    display: flex;
+    flex-direction: column;
+    min-height: 75vh;
+}
+.iframe-parent iframe {
+    background: transparent;
+    border: none;
+    flex-grow: 1;
+}
