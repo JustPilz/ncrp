@@ -75,9 +75,9 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
   }
 
   gitbook.events.bind('start', function (e, config) {
-    initializePlugin(config);
-    getOnline();
-    setInterval(getOnline, 60000);
+    // initializePlugin(config);
+    // getOnline();
+    // setInterval(getOnline, 60000);
     /*
     gitbook.toolbar.createButton({
       icon: 'fa fa-github',
