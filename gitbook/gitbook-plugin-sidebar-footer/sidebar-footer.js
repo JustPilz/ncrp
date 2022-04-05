@@ -56,7 +56,7 @@ require(['gitbook', 'jQuery'], function (gitbook, $) {
       '<div class="sidebar-footer">' +
       //+ '<div class="line">Игроков онлайн: <span id="online" class="online"></span></div>'
       `<div class="line">Статус на ${dateNow}</div>` +
-      '<div class="line">СЕРВЕР РАБОТАЕТ</div>' +
+      '<div class="line">СЕРВЕР НЕ РАБОТАЕТ. ЗАКРЫТ НАВСЕГДА</div>' +
       //'<div class="line">IP: <span id="serverip">139.59.142.46</span> | Порт: <span id="serverport">7777</span></div>' +
       //'<p>' + dateNow + '<p>'
       '</div>';
