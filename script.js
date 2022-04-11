@@ -26,7 +26,7 @@ const months = [
   'декабря',
 ];
 
-const start = new Date('2022-04-10 0:00');
+const start = new Date('2022-04-10');
 const now = new Date();
 
 const daysPassed = dayDiff(start, now);
