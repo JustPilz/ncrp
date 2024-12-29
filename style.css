@@ -24,9 +24,13 @@ body {
   column-break-inside: avoid;
 }
 
+#discord-chat,
+#alt-block {
+  display: none; /* Hidden by default */
+}
 a {
   text-decoration: none;
-  display: block;
+  display: inline-block;
   color: var(--black);
 }
 a:hover,
@@ -39,6 +43,31 @@ a:visited {
 .main__wrapper {
   max-width: 1135px;
   margin: auto;
+}
+
+.ym {
+  filter: grayscale(1) brightness(1.5);
+}
+.ym:hover {
+  filter: none;
+}
+
+#install {
+  display: none;
+}
+
+#install:target {
+  display: block;
+}
+#install .highlightable {
+  padding: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* Стиль при подсветке */
+#install:target .highlightable {
+  background-color: #fffbcc; /* Светло-жёлтый фон */
+  box-shadow: 0 0 10px rgba(255, 223, 0, 0.8); /* Жёлтая подсветка */
+  margin-bottom: 15px;
 }
 
 h1 {

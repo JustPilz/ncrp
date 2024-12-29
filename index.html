@@ -26,24 +26,49 @@
           <div>
             <div id="days-passed"></div>
             <div class="date" id="date"></div>
-            <div class="edition">Mafia 2 Network</div>
+            <div class="edition">Mafia 2 ПО СЕТИ</div>
           </div>
         </aside>
-        <h2 class="title--large main-title">Добро пожаловать в Empire Bay</h2>
+        <h2 class="title--large main-title">Срочные новости</h2>
         <div class="main-text">
           <p>
-            Mafia 2 Network – потенциально возможное возрождение проекта NCRP.
-            Пока ещё сервер не запущен.
+            Мы запустили сервер NCRP в том виде, в каком он существовал почти
+            три года назад, чтобы хотя бы в Новый год у вас была возможность
+            вспомнить то замечательное время и вновь окунуться в атмосферу
+            любимой игры.
           </p>
           <p>
-            На данный момент мы вновь набираем заинтересованную в запуске
-            сервера аудиторию в новом
+            Поскольку многие наверняка забыли данные для входа, мы удалили все
+            аккаунты, чтобы вы могли без проблем создать новый.
+          </p>
+          <p>
+            А чтобы играть было приятнее и гринд не занимал всё свободное время,
+            мы снизили цены и увеличили доход.
+          </p>
+          <p>
+            <a href="#install">Перейти к инструкции по установке</a>
+          </p>
+
+          <p>
+            Присоединяйтесь к
             <a href="https://discord.gg/5BuX2dJTbQ" target="_blank"
-              >Discord-сервере</a
+              >Discord-серверу</a
             >.
           </p>
-          <p>
-            Также вы можете помочь нам финансово:
+
+          <p>Также вы можете поблагодарить нас:</p>
+          <iframe
+            src="https://yoomoney.ru/quickpay/fundraise/button?billNumber=17E36HJH0BJ.241229&"
+            width="330"
+            height="50"
+            frameborder="0"
+            allowtransparency="true"
+            scrolling="no"
+            class="ym"
+          ></iframe>
+
+          <p style="display: none">
+            Также вы можете помочь нам:
             <a href="https://sobe.ru/na/m2n" target="_blank">тут</a> или
             <a
               href="https://widget.qiwi.com/widgets/big-widget-728x200/?publicKey=48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iP3fHDoUHexSMWDwgnPv2XJtTkqfrvsA218Wkdkxg3pbGrDGo8kumhWx7dWDowS191pEJJ62BxEiqqDjzVUQvrVNFGZ8d7SbGRrLMP7zec4&noCache=true"
@@ -51,40 +76,118 @@
               >тут</a
             >
           </p>
-          <p>
-            Мы не поддерживаем решение конфликтов военным путём, однако мы –
-            игровое сообщество. Поэтому обсуждения современной политической
-            обстановки и событий реального мира на всех ресурсах M2N пресекается
-            администраторами. На просторах интернета существует много различных
-            ресурсов о политике, где будут рады вашему участию.
-          </p>
-          <p>Спасибо за понимание! Присоединяйтесь!</p>
+          <p>До встречи в игре!</p>
         </div>
 
         <figure class="terrarium">
           <img src="./img/city.jpg" />
           <figcaption>Вид на центр Эмпайр-Бэй из «Маленькой Италии»</figcaption>
         </figure>
-        <div class="item-with-image cssgrid-collection">
-          <div class="cssgrid-collection__content">Mafia 2 Network © 2022</div>
-        </div>
+
         <div class="sidebar">
           <div class="pie__subtitle">Статус работы сервера</div>
-          <div class="pie__content">Ещё не запущен</div>
-          <h3 class="title">Ламповый чат</h3>
-          <iframe
-            class="discord-frame"
-            src="https://discord.com/widget?id=956279551615451257&amp;theme=light"
-            allowtransparency="true"
-            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-            width="100%"
-            height="330"
-            frameborder="0"
-          >
-          </iframe>
+          <div class="pie__content">ОНЛАЙН</div>
+          <h3 class="title">Чат в Discord</h3>
+          <div id="loading">Загрузка чата...</div>
+          <div id="discord-chat">
+            <iframe
+              class="discord-frame"
+              src="https://discord.com/widget?id=956279551615451257&amp;theme=light"
+              allowtransparency="true"
+              sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+              width="100%"
+              height="330"
+              frameborder="0"
+              allow="allow-scripts"
+            >
+            </iframe>
+          </div>
+          <div id="alt-block">
+            <a href="https://discord.gg/5BuX2dJTbQ" target="_blank"
+              >Ссылка на Discord-сервер</a
+            >.
+            <p>Доступ к Discord с территории РФ ограничен Роскомнадзором.</p>
+            <p>Используйте VPN</p>
+          </div>
         </div>
       </main>
+      <section id="install">
+        <div class="item-with-image cssgrid-collection">
+          <!-- <div class="cssgrid-collection__content">NCRP © 2024</div> -->
+        </div>
+        <div class="install highlightable">
+          <h3>Инструкция</h3>
+          <div class="main-text">
+            <p>
+              1. Скачиваем игру Mafia II и устанавливаем её. Путь установки игры
+              должен быть БЕЗ пробелов и кириллических символов.
+            </p>
+            <p>
+              <a
+                href="https://releases.m2ncrp.now.sh/api/fetch/m2ncrp/launcher/win/torrent/latest"
+                target="_blank"
+                >Скачать игру</a
+              >
+            </p>
+            <p>2. Скачиваем инсталлятор мультиплеера (лончер):</p>
+            <p>
+              <a
+                href="https://releases.m2ncrp.now.sh/api/fetch/m2ncrp/launcher/win/installer/latest"
+                target="_blank"
+                >Скачать лончер</a
+              >
+            </p>
+            <p>
+              3. Открываем скачанный архив и запускаем единственный файл.
+              Следуем инструкциям по установке.
+            </p>
+            <p>
+              4. После успешной установки лончера, запускаем его с ярлыка «Mafia
+              2 NCRP» на рабочем столе.<br />Будет выполнена проверка на
+              обновления. Если они есть - сразу будет выполнена их загрузка.
+            </p>
+            <p>5. Когда всё будет готово, появится кнопка «Играть».</p>
+          </div>
+        </div>
+      </section>
+      <div class="item-with-image cssgrid-collection">
+        <div class="cssgrid-collection__content">NCRP © 2024</div>
+      </div>
     </div>
+
+    <script>
+      const iframe = document.getElementById('discord-chat');
+      const altBlock = document.getElementById('alt-block');
+      const loading = document.getElementById('loading');
+
+      // Function to check if Discord is accessible
+      async function checkDiscordAccessibility() {
+        try {
+          const response = await fetch(
+            'https://discord.com/api/guilds/956279551615451257/widget.json',
+            {
+              method: 'get',
+            }
+          );
+
+          if (response.ok) {
+            // Discord is accessible, show the iframe
+            iframe.style.display = 'block';
+          } else {
+            throw new Error('Discord not accessible');
+          }
+        } catch (error) {
+          // Discord is not accessible, show alternate block
+          altBlock.style.display = 'block';
+        } finally {
+          // Hide the loading indicator
+          loading.style.display = 'none';
+        }
+      }
+
+      // Call the check function
+      checkDiscordAccessibility();
+    </script>
     <!-- partial -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <script src="./script.js"></script>
