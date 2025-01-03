@@ -112,6 +112,10 @@ em {
   font-style: italic;
 }
 
+.warn {
+  color: rgb(192, 92, 10);
+}
+
 .title--large {
   font-family: var(--font-title);
   font-size: 32px;
