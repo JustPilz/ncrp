@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Установка | NCRP</title>
     <link href="https://fonts.googleapis.com" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+
     <style>
       :root {
         --bg-main: #333343;
@@ -76,6 +78,7 @@
         gap: 25px;
       }
 
+      .link,
       .nav-link {
         font-size: 1rem;
         color: white;
@@ -85,6 +88,7 @@
         border-bottom: 1px dashed white;
       }
 
+      .link:hover,
       .nav-link:hover {
         color: var(--white);
       }
@@ -117,7 +121,7 @@
       .container {
         max-width: 940px;
         margin: 40px auto 100px;
-        padding: 0 5%;
+        padding: 0 4%;
       }
 
       .setup-header {
@@ -194,6 +198,7 @@
         transition:
           clip-path 0.3s cubic-bezier(0.4, 0, 0.2, 1),
           background 0.3s ease;
+        margin-bottom: 20px;
       }
 
       .btn-download:hover {
@@ -373,16 +378,11 @@
         <span>!</span>
         <p>
           При возникновении проблем обратитесь к нам в
-          <a
-            target="_blank"
-            class="nav-link"
-            href="https://discord.gg/5BuX2dJTbQ"
+          <a target="_blank" class="link" href="https://discord.gg/5BuX2dJTbQ"
             >Discord</a
           >
           или найдите свою проблему
-          <a target="_blank" class="nav-link" href="/questions.html"
-            >на этой странице</a
-          >
+          <a class="link" href="/questions.html">на этой странице</a>
         </p>
       </div>
     </div>
