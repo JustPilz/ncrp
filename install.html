@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Установка | NCRP</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet" />
+    <style>
+      :root {
+        --bg-main: #333343;
+        --bg-dark: #2a2a38;
+        --field: #3c3c4f;
+        --accent: #ffffff;
+        --white: #ffffff;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      body {
+        background-color: var(--bg-main);
+        color: var(--white);
+        line-height: 1.4;
+        overflow-x: hidden;
+      }
+
+      .bg-layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background:
+          linear-gradient(rgba(51, 51, 67, 0.85), var(--bg-main)),
+          url('img/bg5.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* НОВОЕ ПЛАВАЮЩЕЕ МЕНЮ */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 30px;
+        margin: 20px 8%;
+        background: rgba(60, 60, 79, 0.4);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        position: sticky;
+        top: 20px;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-weight: 600;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+      }
+
+      .nav-group {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .nav-link {
+        font-size: 1rem;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 1.5px;
+        transition: var(--transition);
+        border-bottom: 1px dashed white;
+      }
+
+      .nav-link:hover {
+        color: var(--white);
+      }
+
+      .nav-divider {
+        width: 1px;
+        height: 14px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .btn-back-minimal {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--white);
+        text-decoration: none;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .btn-back-minimal svg {
+        transition: transform 0.3s ease;
+      }
+
+      .btn-back-minimal:hover svg {
+        transform: translateX(-4px);
+      }
+
+      .container {
+        max-width: 940px;
+        margin: 40px auto 100px;
+        padding: 0 5%;
+      }
+
+      .setup-header {
+        margin-bottom: 50px;
+      }
+
+      .setup-header h1 {
+        font-size: 3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+        margin-bottom: 10px;
+      }
+
+      .setup-header .line {
+        width: 60px;
+        height: 4px;
+        background: var(--accent);
+      }
+
+      .step-item {
+        background: var(--field);
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        position: relative;
+        transition: var(--transition);
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .step-item:hover {
+        border-left: 1px solid var(--accent);
+        background: #44445a;
+      }
+
+      .step-num {
+        background: rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 900;
+        color: white;
+      }
+
+      .step-content {
+        padding: 30px;
+      }
+
+      .step-content h3 {
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: var(--white);
+      }
+
+      .step-content p {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 20px;
+      }
+
+      .btn-download {
+        display: inline-block;
+        background: var(--white);
+        color: var(--bg-main);
+        padding: 18px 45px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+        transition:
+          clip-path 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          background 0.3s ease;
+      }
+
+      .btn-download:hover {
+        background: #f0f0f0;
+        clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+      }
+
+      .path-box {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 10px 15px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 0.8rem;
+        color: var(--accent);
+        opacity: 0.7;
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      .important-note {
+        margin-top: 40px;
+        padding: 20px;
+        border: 1px dashed #ff6c70;
+        background: rgba(255, 108, 112, 0.05);
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .important-note p {
+        margin-bottom: 0;
+      }
+
+      .important-note span {
+        font-weight: 900;
+        color: #ff6c70;
+        font-size: 1.5rem;
+      }
+
+      @media (max-width: 600px) {
+        header {
+          margin: 10px 4%;
+          padding: 10px 20px;
+        }
+        .nav-divider,
+        .nav-link {
+          display: none;
+        }
+        .step-item {
+          grid-template-columns: 1fr;
+        }
+        .step-num {
+          padding: 20px 0;
+          height: 50px;
+        }
+        .setup-header h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-layer"></div>
+
+    <header>
+      <a href="/" class="logo">NC<span>RP</span></a>
+
+      <div class="nav-group">
+        <a href="https://discord.gg/5BuX2dJTbQ" class="nav-link">Discord</a>
+        <div class="nav-divider"></div>
+        <a href="/" class="btn-back-minimal">
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          На главную
+        </a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="setup-header">
+        <h1>ИНСТРУКЦИЯ</h1>
+        <div class="line"></div>
+      </div>
+
+      <div class="setup-list">
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Установка игры</h3>
+            <p>
+              Для игры необходима оригинальная версия <b>Mafia II (Classic)</b>.
+              <br />Рекомендуем использовать один из вариантов ниже:
+            </p>
+            <a
+              href="https://ncrp-releases.vercel.app/api/fetch/ncrp/launcher/source1/latest"
+              class="btn-download"
+              >СКАЧАТЬ ИГРУ (вариант 1)</a
+            >
+            <a
+              href="https://ncrp-releases.vercel.app/api/fetch/ncrp/launcher/source2/latest"
+              class="btn-download"
+              >СКАЧАТЬ ИГРУ (вариант 2)</a
+            >
+
+            <div class="important-note">
+              <span>!</span>
+              <p>
+                Путь установки игры должен быть БЕЗ пробелов и русских букв.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Загрузка лаунчера</h3>
+            <p>
+              Скачайте актуальную версию лаунчера для получения последних
+              обновлений.
+            </p>
+            <a
+              href="https://ncrp-releases.vercel.app/api/fetch/ncrp/launcher/installer/latest"
+              class="btn-download"
+              >СКАЧАТЬ ЛАУНЧЕР</a
+            >
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Установка лаунчера</h3>
+            <p>
+              Откройте скачанный архив и запустите единственный файл. Следуйте
+              инструкции по установке.
+            </p>
+            <!-- <div class="path-box">.../Mafia II/pc/</div> -->
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h3>Запуск лаунчера</h3>
+            <p>
+              Запустите лаунчер с ярлыка <b>Mafia 2 NCRP</b> на рабочем столе.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-num">05</div>
+          <div class="step-content">
+            <h3>Старт игры</h3>
+            <p>
+              Перейдите в настройки (нажав на шестерёнку в правом верхнем углу)
+              и укажите ваш будущий логин. Это НЕ имя персонажа. Запомните его!
+            </p>
+            <p>Нажмите кнопку <b>Играть</b></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="important-note">
+        <span>!</span>
+        <p>
+          При возникновении проблем обратитесь к нам в
+          <a
+            target="_blank"
+            class="nav-link"
+            href="https://discord.gg/5BuX2dJTbQ"
+            >Discord</a
+          >
+          или найдите свою проблему
+          <a target="_blank" class="nav-link" href="/questions.html"
+            >на этой странице</a
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

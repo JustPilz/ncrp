@@ -1,230 +1,264 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Mafia 2 NCRP</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Playfair+Display+SC:wght@900&family=Playfair+Display:ital,wght@0,800;1,800&family=Manrope:wght@800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css"
-    />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <!-- partial:index.partial.html -->
-    <div class="main__wrapper">
-      <main>
-        <h1>Empire Bay Times</h1>
-        <aside>
-          <div>
-            <div id="days-passed"></div>
-            <div class="date" id="date"></div>
-            <div class="edition">Mafia 2 ПО СЕТИ</div>
-          </div>
-        </aside>
-        <h2 class="title--large main-title">Срочные новости</h2>
-        <div class="main-text">
-          <p>
-            Мы запустили сервер NCRP в том виде, в каком он существовал почти
-            три года назад, чтобы хотя бы в Новый год у вас была возможность
-            вспомнить то замечательное время и вновь окунуться в атмосферу
-            любимой игры.
-          </p>
-          <p>
-            Поскольку многие наверняка забыли данные для входа, мы удалили все
-            аккаунты, чтобы вы могли без проблем создать новый.
-          </p>
-          <p>
-            А чтобы играть было приятнее и гринд не занимал всё свободное время,
-            мы снизили цены и увеличили доход.
-          </p>
-          <p>
-            <a href="#install">Перейти к инструкции по установке</a>
-          </p>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NCRP | Mafia 2 по сети</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet" />
+    <style>
+      :root {
+        --bg-main: #333343;
+        --bg-dark: #2a2a38;
+        --field: #3c3c4f;
+        --accent: #ffffff;
+        --online: #00ff88;
+        --white: #ffffff;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
 
-          <p>
-            Присоединяйтесь к
-            <a href="https://discord.gg/5BuX2dJTbQ" target="_blank"
-              >Discord-серверу</a
-            >.
-          </p>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+      }
 
-          <div style="display: none">
-            <p>Также вы можете поблагодарить нас:</p>
-            <iframe
-              src="https://yoomoney.ru/quickpay/fundraise/button?billNumber=17E36HJH0BJ.241229&"
-              width="330"
-              height="50"
-              frameborder="0"
-              allowtransparency="true"
-              scrolling="no"
-              class="ym"
-            ></iframe>
-          </div>
+      body {
+        background-color: var(--bg-main);
+        color: var(--white);
+        overflow-x: hidden;
+        line-height: 1.4;
+      }
 
-          <p style="display: none">
-            Также вы можете помочь нам:
-            <a href="https://sobe.ru/na/m2n" target="_blank">тут</a> или
-            <a
-              href="https://widget.qiwi.com/widgets/big-widget-728x200/?publicKey=48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iP3fHDoUHexSMWDwgnPv2XJtTkqfrvsA218Wkdkxg3pbGrDGo8kumhWx7dWDowS191pEJJ62BxEiqqDjzVUQvrVNFGZ8d7SbGRrLMP7zec4&noCache=true"
-              target="_blank"
-              >тут</a
-            >
-          </p>
-          <p>До встречи в игре!</p>
-        </div>
+      .hero-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background:
+          linear-gradient(rgba(51, 51, 67, 0.85), var(--bg-main)),
+          url('img/bg5.jpg');
+        background-size: cover;
+        background-position: center;
+      }
 
-        <figure class="terrarium">
-          <img src="./img/city.jpg" />
-          <figcaption>Вид на центр Эмпайр-Бэй из «Маленькой Италии»</figcaption>
-        </figure>
+      main {
+        padding: 0 8%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
 
-        <div class="sidebar">
-          <div class="pie__subtitle">Статус работы сервера</div>
-          <div class="pie__content">ОНЛАЙН</div>
-          <h3 class="title">Чат в Discord</h3>
-          <div id="loading">Загрузка чата...</div>
-          <div id="discord-chat">
-            <iframe
-              class="discord-frame"
-              src="https://discord.com/widget?id=956279551615451257&amp;theme=light"
-              allowtransparency="true"
-              sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-              width="100%"
-              height="330"
-              frameborder="0"
-              allow="allow-scripts"
-            >
-            </iframe>
-          </div>
-          <div id="alt-block">
-            <a href="https://discord.gg/5BuX2dJTbQ" target="_blank"
-              >Ссылка на Discord-сервер</a
-            >.
-            <p>Доступ к Discord с территории РФ ограничен Роскомнадзором.</p>
-            <p>Используйте VPN</p>
-          </div>
-        </div>
-      </main>
-      <section id="install">
-        <div class="item-with-image cssgrid-collection">
-          <!-- <div class="cssgrid-collection__content">NCRP © 2024</div> -->
-        </div>
-        <div class="install highlightable">
-          <h3>Инструкция</h3>
-          <div class="main-text">
-            <p>
-              1. Скачиваем игру Mafia II и устанавливаем её.
-              <span class="warn"
-                >Путь установки игры должен быть БЕЗ пробелов и кириллических
-                символов.</span
-              >
-            </p>
-            <p>
-              <a
-                href="https://ncrp-releases.vercel.app/api/fetch/ncrp/launcher/source1/latest"
-                target="_blank"
-                >Скачать игру (вариант 1)</a
-              >
-            </p>
-            <p>
-              <a
-                href="https://ncrp-releases.vercel.app/api/fetch/ncrp/launcher/source2/latest"
-                target="_blank"
-                >Скачать игру (вариант 2)</a
-              >
-            </p>
-            <p>2. Скачиваем установщик мультиплеера (лончер):</p>
-            <p>
-              <a
-                href="https://ncrp-releases.vercel.app/api/fetch/ncrp/launcher/installer/latest"
-                target="_blank"
-                >Скачать лончер</a
-              >
-            </p>
-            <p class="warn">
-              Информация для опасающихся за вирусы. Вот ссылка на проверку на
-              <a
-                href="https://www.virustotal.com/gui/file/ac14b0de3da772d8286ac99a0d94369867f0ff41d1e2d8ddfd81dce828767211"
-                target="_blank"
-                >VirusTotal</a
-              >
-              <br />4 из 68 - это погрешность false positive срабатывания
-              ноунейм-антивирусов. То, что определяется как Trojan-Downloader -
-              ничего удивительного: лончер будет скачивать обновления для игры,
-              это его прямая задача. Можете зайти к нам в
-              <a href="https://discord.gg/5BuX2dJTbQ" target="_blank"
-                >Discord-сервер</a
-              >
-              и узнать у других игроков всё ли у них нормально.<br />
-              Мы честны перед вами, не настаиваем и не обязываем вас ни к чему,
-              решать вам. Но без лончера поиграть не получится.
-            </p>
-            <p>
-              3. Открываем скачанный архив и запускаем единственный файл.
-              Следуем инструкциям по установке.
-            </p>
-            <p>
-              4. После успешной установки лончера, запускаем его с ярлыка «Mafia
-              2 NCRP» на рабочем столе.<br />Будет выполнена проверка на
-              обновления. Если они есть - сразу будет выполнена их загрузка.
-            </p>
-            <p>
-              5. В лончере перейдите в настройки (нажав на шестерёнку в правом
-              верхнем углу) и укажите ваш будущий логин. Это НЕ имя персонажа.
-              Запомните его!
-            </p>
-            <p>6. После этого жмите на кнопку «Играть».</p>
-          </div>
-        </div>
-      </section>
-      <div class="item-with-image cssgrid-collection">
-        <div class="cssgrid-collection__content">NCRP © 2025</div>
-      </div>
-    </div>
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        margin-bottom: 45px;
+        width: fit-content;
+        border: 1px solid var(--field);
+        letter-spacing: 1px;
+      }
 
-    <script>
-      const iframe = document.getElementById('discord-chat');
-      const altBlock = document.getElementById('alt-block');
-      const loading = document.getElementById('loading');
+      .status-badge span {
+        color: var(--online);
+        text-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+      }
 
-      // Function to check if Discord is accessible
-      async function checkDiscordAccessibility() {
-        try {
-          const response = await fetch(
-            'https://discord.com/api/guilds/956279551615451257/widget.json',
-            {
-              method: 'get',
-            }
-          );
+      .online-indicator {
+        position: relative;
+        width: 8px;
+        height: 8px;
+        background-color: var(--online);
+        border-radius: 50%;
+      }
 
-          if (response.ok) {
-            // Discord is accessible, show the iframe
-            iframe.style.display = 'block';
-          } else {
-            throw new Error('Discord not accessible');
-          }
-        } catch (error) {
-          // Discord is not accessible, show alternate block
-          altBlock.style.display = 'block';
-        } finally {
-          // Hide the loading indicator
-          loading.style.display = 'none';
+      .online-indicator::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background-color: var(--online);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          width: 8px;
+          height: 8px;
+          opacity: 0.8;
+        }
+        100% {
+          width: 24px;
+          height: 24px;
+          opacity: 0;
         }
       }
 
-      // Call the check function
-      checkDiscordAccessibility();
-    </script>
-    <!-- partial -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-    <script src="./script.js"></script>
+      h1 {
+        font-size: clamp(3rem, 12vw, 8rem);
+        font-weight: 900;
+        line-height: 0.85;
+        letter-spacing: -4px;
+        margin-bottom: 45px;
+        text-transform: uppercase;
+      }
+
+      .accent-text {
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
+      }
+
+      .description {
+        max-width: 600px;
+        margin-bottom: 45px;
+      }
+
+      .description p {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+        letter-spacing: 0.5px;
+        position: relative;
+        padding-left: 25px;
+      }
+
+      .description p::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 10%;
+        height: 80%;
+        width: 1px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--white),
+          transparent
+        );
+        opacity: 0.5;
+      }
+
+      .cta-group {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .btn-main {
+        background: var(--white);
+        color: var(--bg-main);
+        padding: 22px 60px;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 1rem;
+        text-transform: uppercase;
+        display: inline-block;
+        clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+        transition:
+          clip-path 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+          background 0.3s ease;
+      }
+
+      .btn-main:hover {
+        background: #f0f0f0;
+        clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 30px;
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stat-item h4 {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--white);
+      }
+      .stat-item p {
+        font-size: 0.7rem;
+        color: var(--accent);
+        font-weight: 700;
+        text-transform: uppercase;
+        opacity: 0.6;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          letter-spacing: -2px;
+        }
+        .cta-group {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero-bg"></div>
+
+    <main>
+      <div class="status-badge">
+        <div class="online-indicator"></div>
+        <span>ОНЛАЙН</span
+        ><!--  // X PLAYERS -->
+      </div>
+
+      <h1>NC<span class="accent-text">RP</span></h1>
+
+      <div class="description">
+        <p>
+          Легендарный сервер Mafia II, не требующий представления для истинных
+          ценителей аутентичной атмосферы.
+        </p>
+      </div>
+
+      <div class="cta-group">
+        <a href="/install" class="btn-main">Установить</a>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h4>RP</h4>
+          <p>Режим игры</p>
+        </div>
+        <div class="stat-item">
+          <h4>60+</h4>
+          <p>Автомобилей</p>
+        </div>
+        <div class="stat-item">
+          <h4>50+</h4>
+          <p>предметов инвентаря</p>
+        </div>
+        <div class="stat-item">
+          <h4>24/7</h4>
+          <p>Онлайн</p>
+        </div>
+
+        <div class="stat-item">
+          <h4>RC6</h4>
+          <p>Версия мультиплеера</p>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
